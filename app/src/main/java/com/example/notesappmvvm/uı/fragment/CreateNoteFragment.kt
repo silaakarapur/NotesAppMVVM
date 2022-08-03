@@ -76,14 +76,14 @@ class CreateNoteFragment : Fragment() {
         binding.color1Dot.setImageResource(R.drawable.ic_baseline_done_24)
         binding.color1Dot.setOnClickListener {
             binding.color1Dot.setImageResource(R.drawable.ic_baseline_done_24)
-            priority = "1"
+            priority = "2"
 
             binding.color2Dot.setImageResource(0)
             binding.color3Dot.setImageResource(0)
 
         }
         binding.color2Dot.setOnClickListener {
-            priority = "2"
+            priority = "1"
             binding.color2Dot.setImageResource(R.drawable.ic_baseline_done_24)
 
             binding.color1Dot.setImageResource(0)

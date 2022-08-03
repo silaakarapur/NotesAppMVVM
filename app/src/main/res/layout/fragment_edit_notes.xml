@@ -30,10 +30,12 @@
             android:hint="Title"
             android:layout_marginTop="10dp"
             android:padding="15dp"
+            android:textSize="18sp"
             android:maxLines="1"
             android:id="@+id/edt_title"
+            android:textColor="@color/white"
             android:fontFamily="@font/dancing_script"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/color1"
             android:background="@drawable/edt_txt_shape"/>
         <EditText
             android:layout_width="match_parent"
@@ -41,10 +43,11 @@
             android:hint="SubTitle"
             android:layout_marginTop="10dp"
             android:padding="15dp"
+            android:textSize="18sp"
             android:maxLines="1"
             android:id="@+id/edt_sub"
             android:fontFamily="@font/dancing_script"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/color1"
             android:textColor="@color/white"
             android:background="@drawable/edt_txt_shape"/>
 
@@ -52,6 +55,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/color3_dot"
+                android:background="@drawable/color3_dot"/>
             <ImageButton
                 android:layout_margin="10dp"
                 android:layout_width="25dp"
@@ -64,12 +73,7 @@
                 android:layout_margin="10dp"
                 android:id="@+id/color2_dot"
                 android:background="@drawable/color2_dot"/>
-            <ImageButton
-                android:layout_margin="10dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:id="@+id/color3_dot"
-                android:background="@drawable/color3_dot"/>
+
         </LinearLayout>
         <EditText
             android:layout_width="match_parent"
@@ -78,8 +82,10 @@
             android:layout_marginTop="10dp"
             android:id="@+id/edt_notes"
             android:padding="15dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
             android:fontFamily="@font/dancing_script"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/color1"
             android:background="@drawable/edt_txt_shape"/>
     </LinearLayout>
 

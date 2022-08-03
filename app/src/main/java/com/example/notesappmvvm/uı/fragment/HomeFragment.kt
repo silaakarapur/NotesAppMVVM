@@ -23,20 +23,59 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
-      viewModel.getData().observe(viewLifecycleOwner) { movieList ->
-          for (i in movieList) {
-              binding.rcvAddNotes.layoutManager=GridLayoutManager(requireContext(),2)
-              binding.rcvAddNotes.adapter=NotesAdapter(requireContext(),movieList)
-          }
+        viewModel.getData().observe(viewLifecycleOwner) { notesList ->
+            for (i in notesList) {
+                binding.rcvAddNotes.layoutManager = GridLayoutManager(requireContext(), 2)
+                binding.rcvAddNotes.adapter = NotesAdapter(requireContext(), notesList)
+            }
 
-      }
+        }
         binding.btnAddNotes.setOnClickListener {
             Navigation.findNavController(it)
                 .navigate(R.id.action_homeFragment_to_createNoteFragment)
 
         }
+        filterAction()
         return binding.root
     }
+fun filterAction(){
+    binding.allFilter.setOnClickListener {
+        viewModel.getData().observe(viewLifecycleOwner) { notesList ->
+            for (i in notesList) {
+                binding.rcvAddNotes.layoutManager = GridLayoutManager(requireContext(), 2)
+                binding.rcvAddNotes.adapter = NotesAdapter(requireContext(), notesList)
+            }
 
+        }
+    }
+    binding.filterHigh.setOnClickListener {
+        viewModel.getHıghNotes().observe(viewLifecycleOwner) { notesList ->
+            for (i in notesList) {
+                binding.rcvAddNotes.layoutManager = GridLayoutManager(requireContext(), 2)
+                binding.rcvAddNotes.adapter = NotesAdapter(requireContext(), notesList)
+            }
+
+        }
+    }
+    binding.filterLow.setOnClickListener {
+
+        viewModel.getLowNotes().observe(viewLifecycleOwner) { notesList ->
+            for (i in notesList) {
+                binding.rcvAddNotes.layoutManager = GridLayoutManager(requireContext(), 2)
+                binding.rcvAddNotes.adapter = NotesAdapter(requireContext(), notesList)
+            }
+
+        }
+    }
+    binding.filterMedium.setOnClickListener {
+        viewModel.getMediumData().observe(viewLifecycleOwner) { notesList ->
+            for (i in notesList) {
+                binding.rcvAddNotes.layoutManager = GridLayoutManager(requireContext(), 2)
+                binding.rcvAddNotes.adapter = NotesAdapter(requireContext(), notesList)
+            }
+
+        }
+    }
+}
 
 }
