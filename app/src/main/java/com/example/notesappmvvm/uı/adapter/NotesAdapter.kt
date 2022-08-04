@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notesappmvvm.R
@@ -34,6 +35,8 @@ return notesViewHolder(
         holder.binding.notesSubTitle.text=data.subTitle
         holder.binding.notesDate.text=data.data
 
+
+
         when(data.priority){
             "1"->{
                 holder.binding.viewPriority.setBackgroundResource(R.drawable.color1_dot)
@@ -51,6 +54,7 @@ return notesViewHolder(
         holder.binding.root.setOnClickListener {
             val action= HomeFragmentDirections.actionHomeFragmentToEditNotesFragment(data)
             Navigation.findNavController(it).navigate(action)
+
 
         }
   }

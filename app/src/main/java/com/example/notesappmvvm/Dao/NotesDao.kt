@@ -7,6 +7,7 @@ import java.net.IDN
 
 @Dao
 interface NotesDao {
+
     @Query("Select*From Notes")
     fun getNotes():LiveData<List<Notes>>
 

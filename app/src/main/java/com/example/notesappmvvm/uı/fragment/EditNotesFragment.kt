@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
@@ -31,6 +32,7 @@ class EditNotesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         // Inflate the layout for this fragment
         binding = FragmentEditNotesBinding.inflate(layoutInflater, container, false)
         binding.edtTitle.setText(edtnotes.data.title)
@@ -61,6 +63,8 @@ class EditNotesFragment : Fragment() {
             buttomSheat.dismiss()
             //   Navigation.findNavController(it).navigate(R.id.action_editNotesFragment_to_homeFragment)
             activity?.onBackPressed()
+            val action = AnimationUtils.loadAnimation(context, R.anim.enter_left_to_right)
+            binding.editNotesFragment.startAnimation(action)
         }
         textViewNo?.setOnClickListener {
             buttomSheat.dismiss()
@@ -92,7 +96,8 @@ class EditNotesFragment : Fragment() {
             Navigation.findNavController(it!!)
                 .navigate(R.id.action_editNotesFragment_to_homeFragment)
             Toast.makeText(requireContext(), "Notes Updated Succesfully ", Toast.LENGTH_LONG).show()
-
+            val action = AnimationUtils.loadAnimation(context, R.anim.enter_left_to_right)
+            binding.editNotesFragment.startAnimation(action)
         } else {
             Toast.makeText(requireContext(), "please fill in the blanks ", Toast.LENGTH_LONG).show()
         }

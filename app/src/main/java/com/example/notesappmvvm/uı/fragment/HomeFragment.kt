@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
@@ -32,23 +33,27 @@ class HomeFragment : Fragment() {
         viewModel.getNotes().observe(viewLifecycleOwner) { notesList ->
             for (i in notesList) {
                 oldMyNotes = notesList as ArrayList<Notes>
-                adapter= NotesAdapter(requireContext(),notesList)
+                adapter = NotesAdapter(requireContext(), notesList)
                 binding.rcvAddNotes.layoutManager = GridLayoutManager(requireContext(), 2)
                 binding.rcvAddNotes.adapter = adapter
+
             }
 
         }
+
         binding.btnAddNotes.setOnClickListener {
             Navigation.findNavController(it)
                 .navigate(R.id.action_homeFragment_to_createNoteFragment)
-
+            val action = AnimationUtils.loadAnimation(context, R.anim.slide_out_left)
+            binding.homeFragment.startAnimation(action)
         }
         filterAction()
         searcViewAction()
         return binding.root
 
     }
-    private fun searcViewAction(){
+
+    private fun searcViewAction() {
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
             android.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(po: String?): Boolean {
@@ -77,7 +82,7 @@ class HomeFragment : Fragment() {
             viewModel.getNotes().observe(viewLifecycleOwner) { notesList ->
                 for (i in notesList) {
                     oldMyNotes = notesList as ArrayList<Notes>
-                    adapter= NotesAdapter(requireContext(),notesList)
+                    adapter = NotesAdapter(requireContext(), notesList)
 
                     binding.rcvAddNotes.layoutManager = GridLayoutManager(requireContext(), 2)
                     binding.rcvAddNotes.adapter = adapter
@@ -89,7 +94,7 @@ class HomeFragment : Fragment() {
             viewModel.getHıghNotes().observe(viewLifecycleOwner) { notesList ->
                 for (i in notesList) {
                     oldMyNotes = notesList as ArrayList<Notes>
-                    adapter= NotesAdapter(requireContext(),notesList)
+                    adapter = NotesAdapter(requireContext(), notesList)
 
                     binding.rcvAddNotes.layoutManager = GridLayoutManager(requireContext(), 2)
                     binding.rcvAddNotes.adapter = adapter
@@ -102,7 +107,7 @@ class HomeFragment : Fragment() {
             viewModel.getLowNotes().observe(viewLifecycleOwner) { notesList ->
                 for (i in notesList) {
                     oldMyNotes = notesList as ArrayList<Notes>
-                    adapter= NotesAdapter(requireContext(),notesList)
+                    adapter = NotesAdapter(requireContext(), notesList)
 
                     binding.rcvAddNotes.layoutManager = GridLayoutManager(requireContext(), 2)
                     binding.rcvAddNotes.adapter = adapter
@@ -114,7 +119,7 @@ class HomeFragment : Fragment() {
             viewModel.getMediumData().observe(viewLifecycleOwner) { notesList ->
                 for (i in notesList) {
                     oldMyNotes = notesList as ArrayList<Notes>
-                    adapter= NotesAdapter(requireContext(),notesList)
+                    adapter = NotesAdapter(requireContext(), notesList)
                     binding.rcvAddNotes.layoutManager = GridLayoutManager(requireContext(), 2)
                     binding.rcvAddNotes.adapter = adapter
                 }

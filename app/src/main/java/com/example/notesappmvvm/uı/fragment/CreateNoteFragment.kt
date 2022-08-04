@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
@@ -43,6 +44,9 @@ class CreateNoteFragment : Fragment() {
         return binding.root
     }
 
+
+
+
     private fun createNote(it: View?) {
         val title = binding.edtTitle.text.toString()
         val subtitle = binding.edtSub.text.toString()
@@ -65,6 +69,8 @@ class CreateNoteFragment : Fragment() {
             viewModel.addNotes(data)
             Navigation.findNavController(it!!)
                 .navigate(R.id.action_createNoteFragment_to_homeFragment)
+            val action= AnimationUtils.loadAnimation(context,R.anim.enter_left_to_right)
+            binding.frameid.startAnimation(action)
 
         } else {
             Toast.makeText(requireContext(), "please fill in the blanks ", Toast.LENGTH_LONG).show()
