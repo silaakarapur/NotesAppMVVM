@@ -53,13 +53,14 @@ class EditNotesFragment : Fragment() {
         val buttomSheat: BottomSheetDialog = BottomSheetDialog(requireContext())
         buttomSheat.setContentView(R.layout.dialog_details)
         buttomSheat.show()
-        val textViewYes= buttomSheat.findViewById<TextView>(R.id.textViewYes)
-        var textViewNo =buttomSheat.findViewById<TextView>(R.id.textViewNo)
+        val textViewYes = buttomSheat.findViewById<TextView>(R.id.textViewYes)
+        var textViewNo = buttomSheat.findViewById<TextView>(R.id.textViewNo)
 
         textViewYes?.setOnClickListener {
             viewModel.deleteNotes(edtnotes.data.id!!)
-          buttomSheat.dismiss()
-
+            buttomSheat.dismiss()
+            //   Navigation.findNavController(it).navigate(R.id.action_editNotesFragment_to_homeFragment)
+            activity?.onBackPressed()
         }
         textViewNo?.setOnClickListener {
             buttomSheat.dismiss()
