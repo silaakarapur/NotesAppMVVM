@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
@@ -16,6 +17,7 @@ import com.example.notesappmvvm.R
 import com.example.notesappmvvm.databinding.FragmentEditNotesBinding
 import com.example.notesappmvvm.model.Notes
 import com.example.notesappmvvm.viewmodel.NotesViewModel
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import java.util.*
 
 
@@ -24,6 +26,7 @@ class EditNotesFragment : Fragment() {
     val edtnotes by navArgs<EditNotesFragmentArgs>()
     val viewModel: NotesViewModel by viewModels()
     lateinit var binding: FragmentEditNotesBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,7 +43,28 @@ class EditNotesFragment : Fragment() {
         binding.btnEdit.setOnClickListener {
             updateNotes(it)
         }
+        binding.btnDelete.setOnClickListener {
+            deleteNotes()
+        }
         return binding.root
+    }
+
+    private fun deleteNotes() {
+        val buttomSheat: BottomSheetDialog = BottomSheetDialog(requireContext())
+        buttomSheat.setContentView(R.layout.dialog_details)
+        buttomSheat.show()
+        val textViewYes= buttomSheat.findViewById<TextView>(R.id.textViewYes)
+        var textViewNo =buttomSheat.findViewById<TextView>(R.id.textViewNo)
+
+        textViewYes?.setOnClickListener {
+            viewModel.deleteNotes(edtnotes.data.id!!)
+          buttomSheat.dismiss()
+
+        }
+        textViewNo?.setOnClickListener {
+            buttomSheat.dismiss()
+        }
+
     }
 
     private fun updateNotes(it: View) {

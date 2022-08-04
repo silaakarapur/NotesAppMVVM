@@ -6,23 +6,29 @@
     android:background="@color/color1"
 
     android:layout_height="match_parent">
-    <View
-        android:layout_width="150dp"
-        android:layout_height="10dp"
-        android:background="@color/color2"
-        android:layout_gravity="center"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="Are you sure want to delete \n this note"
     android:gravity="center"
-    android:textSize="14sp"
+    android:textSize="22sp"
+    android:textColor="@color/color6"
     android:fontFamily="@font/dancing_script"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_margin="10dp"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/textViewYes"
         android:fontFamily="@font/dancing_script"
         android:background="@drawable/yes_btn"
         android:padding="10dp"
@@ -34,7 +40,15 @@
         android:layout_margin="10dp"
         android:background="@drawable/no_btn"
         android:padding="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/textViewNo"
         android:gravity="center"
+        android:textColor="@color/color5"
         android:fontFamily="@font/dancing_script"
-        android:text="Yes"/>
+        android:text="No"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
 </LinearLayout>

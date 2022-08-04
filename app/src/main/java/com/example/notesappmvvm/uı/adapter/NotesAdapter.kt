@@ -12,11 +12,14 @@ import com.example.notesappmvvm.model.Notes
 import com.example.notesappmvvm.uı.adapter.NotesAdapter.*
 import com.example.notesappmvvm.uı.fragment.HomeFragmentDirections
 
-class NotesAdapter(val requireContext: Context, val movieList: List<Notes>) :RecyclerView.Adapter<notesViewHolder>() {
+class NotesAdapter(val requireContext: Context, var notesList: List<Notes>) :RecyclerView.Adapter<notesViewHolder>() {
     class notesViewHolder(val binding: ItemNotesBinding):RecyclerView.ViewHolder(binding.root) {
 
     }
-
+fun filtering(newFilterlist: ArrayList<Notes>){
+    notesList=newFilterlist
+    notifyDataSetChanged()
+}
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): notesViewHolder {
 return notesViewHolder(
     ItemNotesBinding.inflate(
@@ -26,7 +29,7 @@ return notesViewHolder(
 )   }
 
     override fun onBindViewHolder(holder: notesViewHolder, position: Int) {
-        val data =movieList[position]
+        val data =notesList[position]
         holder.binding.notesTitle.text=data.title
         holder.binding.notesSubTitle.text=data.subTitle
         holder.binding.notesDate.text=data.data
@@ -52,5 +55,5 @@ return notesViewHolder(
         }
   }
 
-    override fun getItemCount()= movieList.size
+    override fun getItemCount()= notesList.size
 }

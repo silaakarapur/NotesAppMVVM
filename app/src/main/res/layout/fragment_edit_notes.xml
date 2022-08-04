@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color1"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -87,6 +86,7 @@
             android:fontFamily="@font/dancing_script"
             android:textColorHint="@color/color1"
             android:background="@drawable/edt_txt_shape"/>
+
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -96,6 +96,14 @@
         app:backgroundTint="@color/color5"
         android:src="@drawable/ic_baseline_done_24"
         android:layout_gravity="bottom|right"
+        android:layout_margin="26dp"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnDelete"
+        app:backgroundTint="@color/color5"
+        android:src="@drawable/ic_baseline_delete_outline_24"
+        android:layout_gravity="bottom|left"
         android:layout_margin="26dp"/>
 
 </FrameLayout>
