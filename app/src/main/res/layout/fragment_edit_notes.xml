@@ -23,7 +23,7 @@
             android:maxLines="1"
             android:text="Update Notes"
             android:textSize="25dp"
-            android:fontFamily="@font/dancing_script"/>
+            android:fontFamily="@font/aladin"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             android:maxLines="1"
             android:id="@+id/edt_title"
             android:textColor="@color/white"
-            android:fontFamily="@font/dancing_script"
+            android:fontFamily="@font/aladin"
             android:textColorHint="@color/color1"
             android:background="@drawable/edt_txt_shape"/>
         <EditText
@@ -46,7 +46,7 @@
             android:textSize="18sp"
             android:maxLines="1"
             android:id="@+id/edt_sub"
-            android:fontFamily="@font/dancing_script"
+            android:fontFamily="@font/aladin"
             android:textColorHint="@color/color1"
             android:textColor="@color/white"
             android:background="@drawable/edt_txt_shape"/>
@@ -84,7 +84,7 @@
             android:padding="15dp"
             android:textSize="18sp"
             android:textColor="@color/white"
-            android:fontFamily="@font/dancing_script"
+            android:fontFamily="@font/aladin"
             android:textColorHint="@color/color1"
             android:background="@drawable/edt_txt_shape"/>
 

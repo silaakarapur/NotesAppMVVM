@@ -50,7 +50,6 @@ class CreateNoteFragment : Fragment() {
     private fun createNote(it: View?) {
         val title = binding.edtTitle.text.toString()
         val subtitle = binding.edtSub.text.toString()
-
         val notes = binding.edtNotes.text.toString()
         val d = Date()
         val notesDate: CharSequence = DateFormat.format("MMMM d,yyyy", d.time)

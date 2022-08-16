@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/color1"
-
     android:layout_height="match_parent">
 
     <Space
@@ -17,7 +16,7 @@
     android:gravity="center"
     android:textSize="22sp"
     android:textColor="@color/color6"
-    android:fontFamily="@font/dancing_script"/>
+    android:fontFamily="@font/aladin"/>
     <Space
         android:layout_width="match_parent"
         android:layout_height="20dp"/>
@@ -30,7 +29,7 @@
         android:clickable="true"
         android:textStyle="bold"
         android:id="@+id/textViewYes"
-        android:fontFamily="@font/dancing_script"
+        android:fontFamily="@font/aladin"
         android:background="@drawable/yes_btn"
         android:padding="10dp"
         android:textColor="@color/white"
@@ -46,7 +45,7 @@
         android:id="@+id/textViewNo"
         android:gravity="center"
         android:textColor="@color/color5"
-        android:fontFamily="@font/dancing_script"
+        android:fontFamily="@font/aladin"
         android:text="No"/>
 
     <Space
